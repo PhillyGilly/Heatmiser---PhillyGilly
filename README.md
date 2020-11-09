@@ -5,7 +5,7 @@ This is a work in progress for adding Heatmiser Neo-hub support to Home Assistan
 
 Installation:
 
-Before starting instalation you should know the IP address of the Neo-hub. If you don't know the IP address, use one of the approaches suggested below to find your neo-hubs IP address.
+Before starting installation you should know the IP address of the Neo-hub. If you don't know the IP address, use one of the approaches suggested below to find your neo-hub's IP address.
 
 It is suggested that you should allocate a static IP to the Heatmiser Neo-hub or use a DNS entry that's resolvable by Home-Assistant.
 
@@ -18,6 +18,7 @@ When the integration starts you will need to enter the Neo-hub IP address. The p
 
 When the integration is running you can still change logger options by editing (usually) configuration.yaml as described below.
 
+If you are using this method of installation in an instance of Home Assistant which had an earlier manual installation, you will need to remove the entry in yur configuration.yaml file
 
 
 Legacy installation:
@@ -40,9 +41,17 @@ cd /config/custom_components
 git clone https://github.com/MindrustUK/Heatmiser-for-home-assistant
 mv Heatmiser-for-home-assistant heatmiserneo
 ```
-For both above scenarios then complete configuration as follows:
+For both above scenarios then complete configuration by adding the following to the configuration.yaml in your /config directory.
 
-General Configuration:
+```yaml
+climate:
+  - platform: heatmiserneo
+    host: <Insert IP Address / Hostname>
+    port: 4242
+```
+
+
+Find your Neo-hub's IP address:
 
 [Authors note: Add notes about how to find your heatmiser neohub on your network (Nmap, checking your routers DHCP table, ARP etc).]
 
@@ -50,7 +59,6 @@ Suggestions from Haakon Storm Heen, Use namp on your local network range:
 
 ```nmap -Pn -p4242 -oG - 192.168.1.0/24 | grep 4242 | grep -i open```
 
-Heatmiser Neo integration can be setup via Home Assistant Integrations page.
 
 (Optional) Logging Configuration:
 
