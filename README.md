@@ -34,7 +34,7 @@ Go to Configuration -> Integrations and click on the orange icon in the bottom r
 
 ![HowToIntegrate](https://github.com/PhillyGilly/Heatmiser-for-home-assistant/blob/master/%234.png)
 
-When the integration starts you will need to enter the Neo-hub IP address. The port is always 4242.
+When the integration starts you may need to enter the Neo-hub IP address. The port is always 4242.
 
 ![Config](https://user-images.githubusercontent.com/56273663/98438427-fb40f200-20e1-11eb-8437-a0288548082b.png)
 
